@@ -88,7 +88,7 @@ class AddOgScreen extends StatelessWidget {
                 icon: Icons.arrow_right,
               ),
               const SizedBox(height: AppSizes.spaceBtwSections,),
-              CustomButton(title: 'Add', onTap: ()=> controller.organizationAdd()),
+              CustomButton(title: 'Add', onTap: ()=> controller.addOrganization()),
             ],
           ),
         ),

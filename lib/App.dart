@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         inputDecorationTheme: TextFormFieldTheme.textFieldTheme,
       ),
       debugShowCheckedModeBanner: false,
-      home:  AddOgScreen(),
+      home:  LoginScreen(),
     );
   }
 }

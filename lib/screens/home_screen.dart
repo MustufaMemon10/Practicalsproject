@@ -30,11 +30,9 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: AppSizes.spaceBtwSections
             ),
-            CustomButton(title: 'Show Organization Data', onTap: ()=>()=>Get.to(()=>  ShowOgScreen()),
+            CustomButton(title: 'Show Organization Data', onTap: ()=>Get.to(()=>  ShowOgScreen()),
             ),
             const SizedBox(height: AppSizes.spaceBtwSections
-            ),
-            CustomButton(title: 'Show Organization Data', onTap: (){},
             ),
           ],
         ),

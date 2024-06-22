@@ -20,6 +20,10 @@ class LoginController extends GetxController {
 
   /// Functions
   Future<void> loginWithEmailAndPassword() async {
+    if (!loginFormKey.currentState!.validate()) {
+      return;
+    }
+
     try {
       isLoading.value = true;
       const apiUrl = "http://122.170.12.63:90/api/auth/login";
@@ -44,12 +48,11 @@ class LoginController extends GetxController {
       } else {
         final responseBody = json.decode(response.body);
         Get.snackbar('Error', responseBody['message'], snackPosition: SnackPosition.BOTTOM);
-        print(responseBody['message']);
       }
-    }catch (e) {
+    } catch (e) {
+      Get.snackbar('Error', e.toString(), snackPosition: SnackPosition.BOTTOM);
+    } finally {
       isLoading.value = false;
-      Loaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-      print(e.toString());
     }
   }
 }

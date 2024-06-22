@@ -23,16 +23,17 @@ class ShowOgScreen extends StatelessWidget {
         () => controller.isLoading.value
             ? const Center(child: CircularProgressIndicator())
             : ListView.builder(
+          physics: const AlwaysScrollableScrollPhysics(),
                 itemCount: controller.organizations.length,
                 itemBuilder: (context, index) {
                   final organization = controller.organizations[index];
                   return ListTile(
-                    title: Text(organization['organizationName']),
+                    title: Text(organization.name),
                     subtitle: Column(
                       children: [
-                        Text(organization['organizationShortName']),
-                        Text(organization['organizationURL']),
-                        Text(organization['organizationLOGO']),
+                        Text(organization.shortName),
+                        Text(organization.url),
+                        Text(organization.logo),
                       ],
                     ),
                   );
